@@ -1,0 +1,13 @@
+site_cleanup.admin_link:
+  title: 'Site Cleanup'
+  description: 'Scan and remove unused site content, media, files, and configuration.'
+  route_name: site_cleanup.admin
+  parent: system.admin_reports
+  weight: 10
+
+site_cleanup.settings_link:
+  title: 'Site Cleanup'
+  description: 'Configure scan thresholds and safety options.'
+  route_name: site_cleanup.settings
+  parent: system.admin_config_system
+  weight: 10

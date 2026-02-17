@@ -1,0 +1,14 @@
+name: Site Cleanup
+type: module
+description: 'Scan and remove unused files, views, content, blocks, taxonomy terms, media, paragraphs, and more. Integrates with entity_usage for accurate reference detection.'
+core_version_requirement: ^8 || ^9 || ^10
+package: Administration
+dependencies:
+  - drupal:file
+  - drupal:field
+  - drupal:views
+  - drupal:block
+  - drupal:node
+  - drupal:menu_link_content
+  - drupal:taxonomy
+  - drupal:media

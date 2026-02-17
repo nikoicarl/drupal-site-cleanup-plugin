@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Site Cleanup module hooks.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function site_cleanup_help($route_name, RouteMatchInterface $route_match) {
+  if ($route_name !== 'help.page.site_cleanup') {
+    return '';
+  }
+  $output  = '<h3>' . t('About') . '</h3>';
+  $output .= '<p>' . t('Site Cleanup scans your Drupal site for unused content, media, files, views, blocks, taxonomy terms, paragraphs, and more.') . '</p>';
+  $output .= '<p>' . t('When the <a href=":eu">entity_usage</a> module is enabled, reference detection is more accurate because it queries the entity usage tracking table instead of scanning individual field tables.', [':eu' => 'https://www.drupal.org/project/entity_usage']) . '</p>';
+  $output .= '<p>' . t('Visit <a href=":url">Reports &gt; Site Cleanup</a> to run a scan.', [':url' => \Drupal\Core\Url::fromRoute('site_cleanup.admin')->toString()]) . '</p>';
+  return $output;
+}
