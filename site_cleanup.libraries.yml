@@ -1,0 +1,10 @@
+admin:
+  version: 1.0
+  css:
+    theme:
+      css/site-cleanup.css: {}
+  js:
+    js/site-cleanup.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
