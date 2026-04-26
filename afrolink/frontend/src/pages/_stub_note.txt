@@ -1,0 +1,5 @@
+// ── This file is intentionally a stub generator.
+// Each page below is a scaffold — replace with full implementation.
+
+// frontend/src/pages/Shop.js
+export { default } from './_stubs/Shop';

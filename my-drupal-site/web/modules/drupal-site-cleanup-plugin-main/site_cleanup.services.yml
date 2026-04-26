@@ -1,0 +1,48 @@
+services:
+  site_cleanup.entity_usage_bridge:
+    class: Drupal\site_cleanup\Service\EntityUsageBridge
+    arguments: ['@module_handler', '@service_container']
+
+  site_cleanup.file_scanner:
+    class: Drupal\site_cleanup\Service\FileScanner
+    arguments: ['@database', '@entity_type.manager']
+
+  site_cleanup.field_scanner:
+    class: Drupal\site_cleanup\Service\FieldScanner
+    arguments: ['@entity_field.manager', '@database']
+
+  site_cleanup.module_scanner:
+    class: Drupal\site_cleanup\Service\ModuleScanner
+    arguments: ['@module_handler', '@database', '@info_parser']
+
+  site_cleanup.view_scanner:
+    class: Drupal\site_cleanup\Service\ViewScanner
+    arguments: ['@entity_type.manager', '@database']
+
+  site_cleanup.content_scanner:
+    class: Drupal\site_cleanup\Service\ContentScanner
+    arguments: ['@entity_type.manager', '@database', '@entity_field.manager', '@site_cleanup.entity_usage_bridge']
+
+  site_cleanup.block_scanner:
+    class: Drupal\site_cleanup\Service\BlockScanner
+    arguments: ['@entity_type.manager', '@theme_handler']
+
+  site_cleanup.taxonomy_scanner:
+    class: Drupal\site_cleanup\Service\TaxonomyScanner
+    arguments: ['@entity_type.manager', '@database', '@entity_field.manager', '@site_cleanup.entity_usage_bridge']
+
+  site_cleanup.media_scanner:
+    class: Drupal\site_cleanup\Service\MediaScanner
+    arguments: ['@entity_type.manager', '@database', '@entity_field.manager', '@site_cleanup.entity_usage_bridge']
+
+  site_cleanup.paragraph_scanner:
+    class: Drupal\site_cleanup\Service\ParagraphScanner
+    arguments: ['@entity_type.manager', '@database', '@entity_field.manager', '@site_cleanup.entity_usage_bridge']
+
+  site_cleanup.menu_scanner:
+    class: Drupal\site_cleanup\Service\MenuScanner
+    arguments: ['@entity_type.manager']
+
+  site_cleanup.user_scanner:
+    class: Drupal\site_cleanup\Service\UserScanner
+    arguments: ['@entity_type.manager', '@database']
